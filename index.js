@@ -3,6 +3,9 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
+const connectDB = require('./config/conn')
+
+connectDB()
 
 const app = express()
 
@@ -16,7 +19,7 @@ app.use(cors())
 app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
-    res.status(200).json({ messahe: 'Express on Vercell' })
+    res.status(200).json({ message: 'Express on Vercell' })
 })
 
 app.listen(port, () => {
