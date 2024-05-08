@@ -1,5 +1,4 @@
 const generateToken = require('../../utils/generateToken.js')
-const generateToken = require('../../utils/generateToken.js')
 
 const UserLoginService = async (req, res, next, Model) => {
     const { email, password } = req.body

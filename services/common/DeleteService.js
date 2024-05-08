@@ -1,4 +1,4 @@
-const ErrorResponse = require('../utils/errorResponse.js')
+const ErrorResponse = require('../../utils/errorResponse.js')
 const isValidObjectId = require('../../utils/isValidObjectId.js')
 
 const DeleteService = async (req, res, next, Model) => {
