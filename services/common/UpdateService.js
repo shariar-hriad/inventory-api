@@ -1,5 +1,5 @@
-import ErrorResponse from '../../utils/errorResponse.js'
-import isValidObjectId from '../../utils/isValidObjectId.js'
+const ErrorResponse = require('../../utils/errorResponse.js')
+const isValidObjectId = require('../../utils/isValidObjectId.js')
 
 const UpdateService = async (req, res, next, Model) => {
     try {
@@ -21,4 +21,4 @@ const UpdateService = async (req, res, next, Model) => {
     }
 }
 
-export default UpdateService
+module.exports = UpdateService

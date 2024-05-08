@@ -1,4 +1,4 @@
-import ErrorResponse from '../../utils/errorResponse.js'
+const ErrorResponse = require('../../utils/errorResponse.js')
 
 const GetAllCustomerService = async (req, res, next, Model) => {
     try {
@@ -38,4 +38,4 @@ const GetAllCustomerService = async (req, res, next, Model) => {
     }
 }
 
-export default GetAllCustomerService
+module.exports = GetAllCustomerService
