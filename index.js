@@ -7,6 +7,7 @@ const connectDB = require('./config/conn')
 const { notFound, errorHandler } = require('./middleware/error.middleware')
 const customerRoute = require('./routes/customer.route')
 const userRoute = require('./routes/user.route')
+const productsRoute = require('./routes/products.route')
 
 connectDB()
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', userRoute)
 app.use('/api/customer', customerRoute)
+app.use('/api/products', productsRoute)
 
 app.use(notFound)
 app.use(errorHandler)

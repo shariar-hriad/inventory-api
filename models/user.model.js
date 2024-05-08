@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
             enum: ['customer', 'manager', 'admin'],
             default: 'customer',
         },
+        createdAt: {
+            type: Date,
+            default: Date.now,
+        },
     },
     {
         timestamps: true,
