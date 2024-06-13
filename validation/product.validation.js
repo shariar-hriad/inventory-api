@@ -1,4 +1,5 @@
-const { body } = require('express-validator')
+const { body, param } = require('express-validator')
+const {} = require('mongoose')
 
 const createProductValidation = [
     body('name')
@@ -53,6 +54,11 @@ const createProductValidation = [
     body('user').optional().isString().withMessage('User should be a string'),
 ]
 
+const updateProductValidation = [
+    param('id').customSanitizer((value) => new Mongoose.Types.ObjectId(value)),
+]
+
 module.exports = {
     createProductValidation,
+    updateProductValidation,
 }
