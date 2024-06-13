@@ -12,6 +12,7 @@ const customerRoute = require('./routes/customer.route')
 const userRoute = require('./routes/user.route')
 const productRoute = require('./routes/product.route')
 const categoryRoute = require('./routes/category.route')
+const cartRoute = require('./routes/cart.route')
 
 connectDB()
 
@@ -42,6 +43,7 @@ app.use('/api/users', userRoute)
 app.use('/api/customer', customerRoute)
 app.use('/api/category', categoryRoute)
 app.use('/api/product', productRoute)
+app.use('/api/cart', cartRoute)
 
 app.use(notFound)
 app.use(errorHandler)
