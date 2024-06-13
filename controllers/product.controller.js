@@ -1,4 +1,4 @@
-const Products = require('../models/products.model')
+const Product = require('../models/product.model')
 const asyncHandler = require('express-async-handler')
 const CreateService = require('../services/common/CreateService')
 const DeleteService = require('../services/common/DeleteService')
@@ -9,23 +9,23 @@ const ErrorResponse = require('../utils/errorResponse')
 const DetailsByIdService = require('../services/common/DetailsByIdService')
 
 const CreateProduct = asyncHandler(async (req, res, next) => {
-    await CreateService(req, res, next, Products)
+    await CreateService(req, res, next, Product)
 })
 
 const GetAllProducts = asyncHandler(async (req, res, next) => {
-    await GetAllProductsService(req, res, next, Products)
+    await GetAllProductsService(req, res, next, Product)
 })
 
 const UpdateProduct = asyncHandler(async (req, res, next) => {
-    await UpdateProductService(req, res, next, Products)
+    await UpdateProductService(req, res, next, Product)
 })
 
 const DeleteProduct = asyncHandler(async (req, res, next) => {
-    await DeleteService(req, res, next, Products)
+    await DeleteService(req, res, next, Product)
 })
 
 const ProductsDetailsById = asyncHandler(async (req, res, next) => {
-    await DetailsByIdService(req, res, next, Products)
+    await DetailsByIdService(req, res, next, Product)
 })
 
 module.exports = {

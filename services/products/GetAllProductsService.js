@@ -2,7 +2,7 @@ const GetAllProductsService = async (req, res, next, Model) => {
     try {
         const limit = req.query.limit || 8
 
-        const productsCount = await Model.countDocuments()
+        const productCount = await Model.countDocuments()
 
         // Retrieve query parameters for search, pagination, and filtering
         const { page = 1, search, filter } = req.query
@@ -27,8 +27,8 @@ const GetAllProductsService = async (req, res, next, Model) => {
             message: 'Success',
             products,
             currentPage: parseInt(page),
-            totalPages: Math.ceil(productsCount / limit),
-            totalProducts: productsCount,
+            totalPages: Math.ceil(productCount / limit),
+            totalProducts: productCount,
         })
     } catch (error) {
         return next(error)

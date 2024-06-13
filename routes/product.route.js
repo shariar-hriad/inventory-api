@@ -6,17 +6,17 @@ const {
     UpdateProduct,
     DeleteProduct,
     ProductsDetailsById,
-} = require('../controllers/products.controller.js')
+} = require('../controllers/product.controller.js')
 const validate = require('../validation/validate.js')
 const {
     createProductValidation,
     updateProductValidation,
 } = require('../validation/product.validation.js')
 
-const productsRoute = Router()
+const productRoute = Router()
 
 // CREATE PRODUCT
-productsRoute.post(
+productRoute.post(
     '/create-product',
     protect,
     authorize('admin'),
@@ -25,10 +25,10 @@ productsRoute.post(
 )
 
 // GET ALL PRODUCTS
-productsRoute.get('/', GetAllProducts)
+productRoute.get('/', GetAllProducts)
 
 // UPDATE PRODUCT BY ID
-productsRoute.post(
+productRoute.post(
     '/update-product/:id',
     protect,
     authorize('admin'),
@@ -36,9 +36,9 @@ productsRoute.post(
 )
 
 // DELETE PRODUCT BY ID
-productsRoute.delete('/:id', protect, authorize('admin'), DeleteProduct)
+productRoute.delete('/:id', protect, authorize('admin'), DeleteProduct)
 
 // PRODUCT DETAILS BY ID
-productsRoute.get('/:id', protect, authorize('admin'), ProductsDetailsById)
+productRoute.get('/:id', protect, authorize('admin'), ProductsDetailsById)
 
-module.exports = productsRoute
+module.exports = productRoute
